@@ -225,8 +225,9 @@
 
 
 
-# 일정관리 앱 ERD
-![image](https://github.com/user-attachments/assets/824ea867-c393-434b-81ca-cd749785d4b3)
+# (Develop)일정관리 앱 ERD
+![image](https://github.com/user-attachments/assets/cae5cbc3-360f-4a02-b3d8-ef9c9ad25cc3)
+
 
 
 
@@ -240,15 +241,16 @@
   title varchar(45) NOT NULL,
   content varchar(45) NOT NULL,
   password varchar(45) NOT NULL,
-  create_date timestamp(6),
-  update_date timestamp(6);
+  create_date datetime(6),
+  update_date datetime(6));
 
  //user 테이블 생성
   CREATE TABLE user(
   id int NOT NULL PRIMARY KEY,
-  email varchar NOT NULL,
-  password varchar(45) NOT NULL,
-  name varchar(45) NOT NULL);
+  name varchar(45) NOT NULL,
+  age integer NOT NULL,
+  password varchar(45) NOT NULL);
+  
   </code>
 </pre>
 
@@ -263,9 +265,9 @@ VALUES
 
 //user 생성
 INSERT INTO user
-(id, email, password, name)
+(id, password, name, age)
 VALUES
-('abc', 'abc@naver.com' , '1234', '김민주');
+('1', '1234' , '000', '50');
   </code>
 </pre>
 
@@ -298,17 +300,23 @@ WHERE id = 1;
 //user 정보 수정
 UPDATE user
 SET
-email = '바뀐 e-mail 주소',
 password= '바뀐 비밀번호'
-name= '바뀐 이름'
-WHERE id = '2';
+name= '이름'
+WHERE id = '1';
   </code>
 </pre>
 
-### 6. 선택 일정 삭제 query(Delete)
+### 6. 선택 일정/유저 삭제 query(Delete)
 <pre>
   <code>
 DELETE FROM schedule
+WHERE id=1
+   </code>
+</pre>
+
+<pre>
+  <code>
+DELETE FROM user
 WHERE id=1
    </code>
 </pre>
