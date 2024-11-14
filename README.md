@@ -245,11 +245,15 @@
   update_date datetime(6));
 
  //user 테이블 생성
-  CREATE TABLE user(
-  id int NOT NULL PRIMARY KEY,
-  name varchar(45) NOT NULL,
-  age integer NOT NULL,
-  password varchar(45) NOT NULL);
+  create table user (
+        age integer,
+        created_at datetime(6),
+        id bigint not null auto_increment,
+        modified_at datetime(6),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) 
   
   </code>
 </pre>
