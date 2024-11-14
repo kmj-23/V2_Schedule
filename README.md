@@ -236,13 +236,15 @@
 <pre>
   <code>
   //schedule 테이블 생성
-  CREATE TABLE schedule (
-  id int NOT NULL PRIMARY KEY,
-  title varchar(45) NOT NULL,
-  content varchar(45) NOT NULL,
-  password varchar(45) NOT NULL,
-  create_date datetime(6),
-  update_date datetime(6));
+   create table app (
+        created_at datetime(6),
+        id bigint not null auto_increment,
+        modified_at datetime(6),
+        user_id bigint,
+        contents longtext,
+        title varchar(255) not null,
+        primary key (id)
+    )
 
  //user 테이블 생성
   create table user (
