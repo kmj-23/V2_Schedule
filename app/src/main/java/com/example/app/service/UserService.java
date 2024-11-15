@@ -23,7 +23,7 @@ public class UserService {
 
         User savedUser = userRepository.save(user);// member repository에 save를 통해서 member를 매개변수로 전달해줘
 
-        return new SignUpResponseDto(savedUser.getId(),  savedUser.getUsername(), savedUser.getEmail(), savedUser.getAge() );
+        return new SignUpResponseDto(savedUser.getId(),  savedUser.getUsername(), savedUser.getEmail(), savedUser.getAge());
     }
 
     public UserResponseDto findById(Long id) {

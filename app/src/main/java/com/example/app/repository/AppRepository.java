@@ -11,5 +11,4 @@ public interface AppRepository extends JpaRepository<App, Long>{
         return findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id));
     }
 
-
 }

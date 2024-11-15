@@ -31,7 +31,7 @@ public class App extends BaseEntity {
 
     public void setUser(User user) {
         this.user = user;
-    }
+    } // 작성자 추가
 
     public void update(String title, String contents) {
         this.title = title;

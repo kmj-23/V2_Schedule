@@ -22,8 +22,8 @@ public class UserController {
         SignUpResponseDto signUpResponseDto =
                 userService.signUp(
                         requestDto.getUsername(),
-                        requestDto.getPassword(),
                         requestDto.getEmail(),
+                        requestDto.getPassword(),
                         requestDto.getAge()
 
                 );

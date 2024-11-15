@@ -45,8 +45,10 @@ public class AppService {
         return new AppWithAgeResponseDto(findApp.getTitle(), findApp.getContents(), writer.getAge());
     }
 
-    public AppResponseDto update(String title, String contents){
-        return null;
+    public AppResponseDto update(Long id, String title, String contents){
+        App findApp = appRepository.findByIdOrElseThrow(id);
+        findApp.update(title, contents);
+        return new AppResponseDto(id, title, contents);
     }
 
     public void delete(Long id) {

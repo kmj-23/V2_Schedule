@@ -1,5 +1,6 @@
 package com.example.app.controller;
 
+import com.example.app.dto.AppRequestDto;
 import com.example.app.dto.AppResponseDto;
 import com.example.app.dto.AppWithAgeResponseDto;
 import com.example.app.dto.CreateAppRequestDto;
@@ -47,15 +48,11 @@ public class AppController {
 
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<AppResponseDto> update(@PathVariable Long id, @RequestBody CreateAppRequestDto requestDto) {
-//        AppResponseDto appresponseDto = appService.update(title, contents)
-//        return new ResponseEntity<>(appResponseDto, HttpStatus.CREATED);
-//    }
-//    @PutMapping("/{id}")
-//    public Long update(@PathVariable Long id, @RequestBody AppUpdateRequestDto requestDto){
-//        return appService.update(requestDto.getTitle(), requestDto.getContents())
-//    }
+    @PutMapping("/{id}")
+    public ResponseEntity<AppResponseDto>update(@PathVariable Long id, @RequestBody AppRequestDto requestDto){
+        AppResponseDto appResponseDto = appService.update(id, requestDto.getTitle(), requestDto.getContents());
+                return new ResponseEntity<>(appResponseDto, HttpStatus.OK);
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
