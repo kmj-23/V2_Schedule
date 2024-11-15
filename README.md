@@ -12,13 +12,15 @@
 |이름|타입|설명|필수여부|
 |:---:|:---:|:---:|:---:|
 |username|String|유저 이름|필수|
+|email|String|유저 이메일|필수|
 |password|String|유저 비밀번호|필수|
 |age|Integer|유저 나이|필수|
 
 <pre>
   <code>
     {
-    "username": "000", 
+    "username": "000",
+    "email": "********",
     "password": "1234",
     "age": "50"
     }
@@ -31,13 +33,15 @@
 |:---:|:---:|:---:|
 |id|string|아이디|
 |username|String|유저 이름|
+|email|String|유저 이메일|필수|
 |age|Integer|유저 나이|
 
 <pre>
   <code>
     {
     "id": 1,
-    "username": "000", 
+    "username": "000",
+    "email": "********",
     "age": "50"
     }
   </code>
